@@ -52,6 +52,14 @@ namespace MyFirstConsoleApp
             }
             else { Console.WriteLine("Invalid number!"); }
 
+            // Lösung mit while Schleife
+            while (number > weekdays.Length | number < 0)
+            {
+                Console.WriteLine("Invalid number!");
+                Console.WriteLine("Please insert a number between 0 and 6:");
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("You choose: " + weekdays[number]);
         }
     }
 }
