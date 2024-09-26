@@ -8,9 +8,10 @@ namespace CarApp
 {
     internal class ElectricCar : Vehicle    //extends
     {
-        public double BatteryCapacity { get; init; }
+        public double BatteryCapacity { get; init; }  // kwh
+        public double Energy Consumption { get; init; } // kwh/100km
 
-        public string color;
+    public string color;
         public string model { get; init; }  // Modell kann nur einmalig gesetzt werden
 
 
@@ -33,12 +34,10 @@ namespace CarApp
     }
 
     // Konstruktor 
-    public ElectricCar(String color, int maxSpeed, String model, double BatteryCapacity)
+    public ElectricCar(String color, int maxSpeed, String model, double BatteryCapacity, double EnergyConsumption) : base (color, maxSpeed, model)
     {
-        this.color = color;
-        this.maxSpeed = maxSpeed;
-        this.model = model;
         this.BatteryCapacity = BatteryCapacity;
+        this.EnergyCosumption = EnergyConsumption;
     }
 
 }

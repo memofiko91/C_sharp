@@ -30,6 +30,13 @@ namespace CarApp
             }
         }
 
+        public Vehicle(int maxSpeed, string model, string color)
+        {
+            this.maxSpeed = maxSpeed;
+            this.model = model;
+            this.color = color;
+        }
+
         public void Drive(int distance) { Console.WriteLine($"{model} ist {distance} km gefahren."); }
 
         public void Drive(int distance, int speed) { Console.WriteLine($"{model} ist mit einer Geschwindigkeit von {speed} km/h eine Strecke von {distance} km gefahren."); }

@@ -39,14 +39,13 @@ namespace CarApp
 
 
         // Konstruktor 
-        public Car(String color, int maxSpeed, String model, double FuelEfficiency)
+    
+    public Car(String color, int maxSpeed, String model, double FuelEfficiency int _carCount) : base(color, maxSpeed, model)
         {
-            this.color = color;
-            this.maxSpeed = maxSpeed;
-            this.model = model;
-            this.FuelEfficiency = FuelEfficiency;
+            this.BatteryCapacity = BatteryCapacity;
             this._carCount = _carCount++;
         }
+
 
         // Konstruktoraufrufe umleiten
         public Car(String color, String model) : this(color, 150, model, 5);
