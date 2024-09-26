@@ -11,7 +11,7 @@ namespace CarApp
         public double BatteryCapacity { get; init; }  // kwh
         public double Energy Consumption { get; init; } // kwh/100km
 
-    public string color;
+        public string color;
         public string model { get; init; }  // Modell kann nur einmalig gesetzt werden
 
 
@@ -31,14 +31,25 @@ namespace CarApp
                 else maxSpeed = 300;
             }
         }
-    }
 
-    // Konstruktor 
-    public ElectricCar(String color, int maxSpeed, String model, double BatteryCapacity, double EnergyConsumption) : base (color, maxSpeed, model)
-    {
-        this.BatteryCapacity = BatteryCapacity;
-        this.EnergyCosumption = EnergyConsumption;
-    }
+        // Konstruktor 
+        public ElectricCar(String color, int maxSpeed, String model, double BatteryCapacity, double EnergyConsumption) : base(color, maxSpeed, model)
+        {
+            this.BatteryCapacity = BatteryCapacity;
+            this.EnergyCosumption = EnergyConsumption;
+        }
 
+
+        // Methoden 
+        public override void Drive(int distance)
+        {
+            base.Drive(distance);
+            Console.WriteLine($"Es hat dabei {EnergyConsumption * distance / 100} kwh verbraucht")
+        }
+
+    }
 }
+
+
+
 

@@ -37,7 +37,10 @@ namespace CarApp
             this.color = color;
         }
 
-        public void Drive(int distance) { Console.WriteLine($"{model} ist {distance} km gefahren."); }
+        public virtual void Drive(int distance) { 
+
+            Console.WriteLine($"{model} hat die Farbe {color} und ist {distance} km gefahren."); 
+        }
 
         public void Drive(int distance, int speed) { Console.WriteLine($"{model} ist mit einer Geschwindigkeit von {speed} km/h eine Strecke von {distance} km gefahren."); }
 

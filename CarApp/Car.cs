@@ -40,9 +40,9 @@ namespace CarApp
 
         // Konstruktor 
     
-    public Car(String color, int maxSpeed, String model, double FuelEfficiency int _carCount) : base(color, maxSpeed, model)
+        public Car(String color, int maxSpeed, String model, double FuelEfficiency int _carCount) : base(color, maxSpeed, model)
         {
-            this.BatteryCapacity = BatteryCapacity;
+            this.FuelEfficiency = FuelEfficiency;
             this._carCount = _carCount++;
         }
 
@@ -58,9 +58,12 @@ namespace CarApp
 
         public void StartEngine() { Console.WriteLine($"Der Motor von {model} wurde gestartet."); }
 
-        public void Drive(int distance) { Console.WriteLine($"Das Auto { model} ist { distance} km gefahren."); }
+        public override void Drive(int distance) {
+            base.Drive(distance);
+            Console.WriteLine($"Es hat dabei {FuelEfficiency * distance/100} verbraucht."); 
+        }
 
-        public void Drive(int distance, int speed) { Console.WriteLine($"Das Auto {model} ist mit einer Geschwindigkeit von { speed} km/h eine Strecke von {distance} km gefahren."); }
+        public override void Drive(int distance, int speed) { Console.WriteLine($"Das Auto {model} ist mit einer Geschwindigkeit von { speed} km/h eine Strecke von {distance} km gefahren."); }
 
 
         // gibt Tankstand zurück UND max. Strecke zurück, die mit dem Tank gefahren werden kann
