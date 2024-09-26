@@ -32,16 +32,29 @@ namespace CarApp
         private double _fuelInTank = 58.4;
 
         public double FuelEfficiency { get; init; }  // km pro Liter - nach dem init nicht änderbar
-        
 
-        //// Konstruktor 
-        //public Car(String color, int maxSpeed, String model, double FuelEfficiency)
-        //{
-        //    this.color = color;
-        //    this.maxSpeed = maxSpeed;
-        //    this.model = model;
-        //    this.FuelEfficiency = FuelEfficiency;
-        //}
+
+        private int _carCount // zählt Gesamtanzahl der erstellten Car Objekte
+
+
+
+        // Konstruktor 
+        public Car(String color, int maxSpeed, String model, double FuelEfficiency)
+        {
+            this.color = color;
+            this.maxSpeed = maxSpeed;
+            this.model = model;
+            this.FuelEfficiency = FuelEfficiency;
+            this._carCount = _carCount++;
+        }
+
+        // Konstruktoraufrufe umleiten
+        public Car(String color, String model) : this(color, 150, model, 5);
+
+        public Car(int maxSpeed, double Effciency String model) : this("weiß", maxSpeed, "Toyota", FuelEfficiency);
+
+
+
 
 
         public void StartEngine() { Console.WriteLine($"Der Motor von {model} wurde gestartet."); }
@@ -57,6 +70,8 @@ namespace CarApp
             maxDistance = FuelEfficiency * _fuelInTank;
             return _fuelInTank;
         }
+
+        private int GetCarCount() { return _carCount; }
 
 
 

@@ -35,12 +35,12 @@ namespace CarApp
 
             // car2.model = "Kia"; --> nicht möglich, da model setter init ist
 
-           Car car3 = new()
-           {
-               color = "green",
-               maxSpeed = 280,
-               model = "Nissan"
-           };
+            Car car3 = new()
+            {
+                color = "green",
+                maxSpeed = 280,
+                model = "Nissan"
+            };
 
             car3.StartEngine();
             car3.Drive(70);
@@ -67,11 +67,17 @@ namespace CarApp
             car3.Drive(56, 130);
 
             // --------------- mit Konstruktor erstellt -------------------
-            // Car car5 = new("gold", 255, "Opel", 9);
+            Car car5 = new("gold", 255, "Opel", 9);
 
+            Car car6 = new()
+            {
+                color = "black",
+                model = "Audi",
+                FuelEfficiency = 13
+            }
 
+            int allCars = car6.GetCarCount();
+            Console.WriteLine(allCars);
 
         }
-
     }
-}
