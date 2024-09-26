@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarApp
 {
-    public class Car
+    public class Car : Vehicle  // extends
     {
         public string color;
         public string model { get; init; }  // Modell kann nur einmalig gesetzt werden
@@ -72,9 +72,6 @@ namespace CarApp
         }
 
         private int GetCarCount() { return _carCount; }
-
-
-
     }
 
 
